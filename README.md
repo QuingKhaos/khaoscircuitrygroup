@@ -12,17 +12,27 @@ for 2.1, supports 2.0 too.
 
 It supports the same subgroups as Schall Circuit Group:
 
-- `circuit-network` (Vanilla subgroup)
-- `circuit-connection` (Connection controls)
-- `circuit-combinator` (Any combinators)
-- `circuit-combinator-arithmetic` (Arithmetic combinators)
-- `circuit-combinator-decider` (Decider combinators)
-- `circuit-combinator-selector` (Selector combinators)
-- `circuit-combinator-constant` (Constant combinators)
-- `circuit-input` (Produces circuit signals)
-- `circuit-visual` (Visual perception to players)
-- `circuit-visual-lamp` (Lamps)
-- `circuit-auditory` (Auditory perception to players)
+- `circuit-network` - Vanilla subgroup
+- `circuit-connection` - Connection controls
+- `circuit-combinator` - Any combinators
+- `circuit-combinator-arithmetic`ᵃ - Arithmetic combinators
+- `circuit-combinator-decider`ᵃ - Decider combinators
+- `circuit-combinator-selector`ᵃ - Selector combinators
+- `circuit-combinator-constant`ᵃ - Constant combinators
+- `circuit-input` - Produces circuit signals
+- `circuit-visual` - Visual perception to players
+- `circuit-visual-lamp`ᵃ - Lamps
+- `circuit-auditory` - Auditory perception to players
+
+You may also like [QuingKhaos' Circuitry Tweaks](https://mods.factorio.com/mod/khaoscircuitry), which already places a
+lot of circuitry items into the correct subgroups.
+
+ᵃ: Will only show up if the setting "Individual combinator subgroups" is enabled.
+
+## For modders
+
+You just need to add `khaoscircuitrygroup` as optional dependency without any other changes. All your conditional checks
+for Schall Circuit Group will work with this mod too.
 
 ## Legal Notice
 
