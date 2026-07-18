@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2026-07-18
+  Compatibility:
+    - Update to Factorio 2.1.
+  Info:
+    - The migration path from Schall Circuit Group is no longer possible in Factorio 2.1, so your circuitry items may be unsorted until this mod gets adapted too.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2026-07-18
   Features:

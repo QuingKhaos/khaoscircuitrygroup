@@ -31,8 +31,12 @@ lot of circuitry items into the correct subgroups.
 
 ## For modders
 
-You just need to add `khaoscircuitrygroup` as optional dependency without any other changes. All your conditional checks
-for Schall Circuit Group will work with this mod too.
+**Factorio 2.0**: You just need to add `khaoscircuitrygroup` as optional dependency without any other changes. All your
+conditional checks for Schall Circuit Group will work with this mod too.
+
+**Factorio 2.1**: You need to add `khaoscircuitrygroup` as optional dependency and change your conditional checks to
+check for this mod too. Emulating as if Schall Circuit Group is installed is no longer possible in 2.1, so you need to
+check for both mods.
 
 ## Legal Notice
 
