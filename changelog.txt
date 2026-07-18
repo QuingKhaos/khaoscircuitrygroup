@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2026-07-18
+  Compatibility:
+    - We're back on track. Forget what I said in 2.0.0, the migration path from Schall Circuit Group is still possible in Factorio 2.1. *confused pikachu face*
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2026-07-18
   Compatibility:

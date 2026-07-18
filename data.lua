@@ -4,7 +4,8 @@ local khaoslib_recipe = require("__khaoslib__.prototypes.recipe")
 local khaoslib_item_group = require("__khaoslib__.prototypes.item-group")
 local khaoslib_item_subgroup = require("__khaoslib__.prototypes.item-subgroup")
 
--- At least migrate the setting as if Schall Circuit Group were installed
+-- Emulate as if Schall Circuit Group is installed
+mods["SchallCircuitGroup"] = "2.0.1"
 settings.startup["Schall-CGP-individual-combinator-subgroups"] = {
   value = settings.startup["khaoscircuitrygroup-individual-combinator-subgroups"].value
 }
