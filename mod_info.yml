@@ -1,0 +1,9 @@
+mod_info:
+  title: "QuingKhaos' Circuitry Group"
+  summary: "Adds a new Circuitry group to the crafting menu. Drop-in replacement for Schall Circuit Group for 2.1, supports 2.0 too."
+  description_file: README.md
+  attach_source_link: true
+  license: gnulgplv3
+  category: utilities
+  tags:
+    - circuit-network
