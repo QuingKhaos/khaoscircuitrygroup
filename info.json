@@ -1,7 +1,7 @@
 {
   "name": "khaoscircuitrygroup",
   "title": "QuingKhaos' Circuitry Group",
-  "description": "Adds a new Circuit group to the crafting menu. Drop-in replacement for Schall Circuit Group for 2.1, supports 2.0 too.",
+  "description": "Adds a new Circuitry group to the crafting menu. Drop-in replacement for Schall Circuit Group for 2.1, supports 2.0 too.",
   "author": "QuingKhaos",
   "homepage": "https://discord.gg/SYmkaDjFCt",
   "version": "2.0.1",
