@@ -13,8 +13,7 @@ permissions:
 jobs:
   qa:
     name: QA
-    uses: ./.github/workflows/qa.yml
-    secrets: inherit
+    uses: QuingKhaos/khaosci/.github/workflows/qa.yml@2d2ad15a401bf43d8f458d18f1f9f810ba9209dd
 
   release:
     name: Release mod
