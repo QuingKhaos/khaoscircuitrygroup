@@ -1,0 +1,114 @@
+name: Quality Assurance
+
+on:
+  pull_request:
+    branches: [1.x, 2.x]
+  workflow_call:
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    name: Markdown Quality
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install linting tools
+        run: |
+          npm install -g markdownlint-cli
+
+      - name: Lint Markdown files
+        run: |
+          markdownlint --config .markdownlint.json --dot "**/*.md" || {
+            echo "Markdown linting failed"
+            echo "Run 'markdownlint --config .markdownlint.json --dot --fix **/*.md' to auto-fix issues"
+            exit 1
+          }
+
+  jsonlint:
+    runs-on: ubuntu-latest
+    name: JSON Quality
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install linting tools
+        run: |
+          npm install -g jsonlint
+
+      - name: Lint JSON files
+        run: |
+          lint_json() {
+            if [ -f "$1" ]; then
+              echo "Linting $1..."
+              if jsonlint "$1" > /dev/null 2>&1; then
+                echo "$1 passed jsonlint"
+              else
+                echo "$1 failed jsonlint:"
+                jsonlint "$1"
+                return 1
+              fi
+            fi
+          }
+
+          find . -name "*.json" -not -path "./.git/*" | while read -r file; do
+            lint_json "$file"
+          done
+
+  luacheck:
+    runs-on: ubuntu-latest
+    name: Lua Code Quality
+    strategy:
+      fail-fast: false
+      matrix:
+        lua-version: ['5.2']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install Lua ${{ matrix.lua-version }} and luacheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua${{ matrix.lua-version }} liblua${{ matrix.lua-version }}-dev luarocks
+          sudo luarocks install luacheck
+
+      - name: Lint Lua files with luacheck
+        run: |
+          luacheck . || {
+            echo "Lua linting failed"
+            echo "Run 'luacheck .' locally to see detailed errors"
+            exit 1
+          }
+
+  lua-syntax:
+    runs-on: ubuntu-latest
+    name: Lua Syntax Check
+    strategy:
+      fail-fast: false
+      matrix:
+        lua-version: ['5.2']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Install Lua ${{ matrix.lua-version }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua${{ matrix.lua-version }} liblua${{ matrix.lua-version }}-dev
+
+      - name: Check Lua syntax
+        run: |
+          find . -name "*.lua" -not -path "./.git/*" | while read -r file; do
+            echo "Checking syntax: $file"
+            if luac${{ matrix.lua-version }} -p "$file" 2>/dev/null; then
+              echo "$file syntax OK"
+            else
+              echo "$file has syntax errors:"
+              luac${{ matrix.lua-version }} -p "$file"
+              exit 1
+            fi
+          done
