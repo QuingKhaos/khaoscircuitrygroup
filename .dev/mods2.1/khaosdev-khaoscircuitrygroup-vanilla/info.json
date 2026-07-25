@@ -1,0 +1,28 @@
+{
+  "name": "khaosdev-khaoscircuitrygroup-vanilla",
+  "title": "// DEV // QuingKhaos' Circuitry Group // Vanilla //",
+  "description": "",
+  "author": "QuingKhaos",
+  "homepage": "https://discord.gg/SYmkaDjFCt",
+  "version": "0.0.0",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "base",
+    "! elevated-rails",
+    "! quality",
+    "! recycler",
+    "! space-age",
+
+    "khaosdev",
+    "ghost-logistics",
+    "remove-animations",
+
+    "barrel-stages",
+    "barreling-group2",
+    "khaosammogroup",
+    "khaoscircuitrygroup",
+    "khaosmodulesgroup",
+    "khaostransportgroup",
+    "science-tab"
+  ]
+}
