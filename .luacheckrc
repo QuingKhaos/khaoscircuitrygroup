@@ -1,9 +1,14 @@
 --- @diagnostic disable: undefined-global
 
--- Files and directories to check
 include_files = {
   "**/*.lua",
   ".luacheckrc",
+}
+
+exclude_files = {
+  ".git/**",
+  ".lua/**",
+  ".luarocks/**",
 }
 
 files["**/*.lua"] = {

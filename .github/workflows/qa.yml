@@ -60,20 +60,21 @@ jobs:
   luacheck:
     runs-on: ubuntu-latest
     name: Lua Code Quality
-    strategy:
-      fail-fast: false
-      matrix:
-        lua-version: ['5.2']
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - name: Install Lua ${{ matrix.lua-version }} and luacheck
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lua${{ matrix.lua-version }} liblua${{ matrix.lua-version }}-dev luarocks
-          sudo luarocks install luacheck
+      - name: Install Lua
+        uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: "5.2"
+
+      - name: Install LuaRocks
+        uses: leafo/gh-actions-luarocks@v6
+
+      - name: Install luacheck
+        run: luarocks install luacheck
 
       - name: Lint Lua files with luacheck
         run: |
@@ -86,29 +87,25 @@ jobs:
   lua-syntax:
     runs-on: ubuntu-latest
     name: Lua Syntax Check
-    strategy:
-      fail-fast: false
-      matrix:
-        lua-version: ['5.2']
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - name: Install Lua ${{ matrix.lua-version }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y lua${{ matrix.lua-version }} liblua${{ matrix.lua-version }}-dev
+      - name: Install Lua
+        uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: "5.2"
 
       - name: Check Lua syntax
         run: |
-          find . -name "*.lua" -not -path "./.git/*" | while read -r file; do
+          find . -name "*.lua" -not -path "./.git/*" -not -path "./.lua" -not -path "./.lua/*" -not -path "./.luarocks/*" | while read -r file; do
             echo "Checking syntax: $file"
-            if luac${{ matrix.lua-version }} -p "$file" 2>/dev/null; then
+            if luac -p "$file" 2>/dev/null; then
               echo "$file syntax OK"
             else
               echo "$file has syntax errors:"
-              luac${{ matrix.lua-version }} -p "$file"
+              luac -p "$file"
               exit 1
             fi
           done
