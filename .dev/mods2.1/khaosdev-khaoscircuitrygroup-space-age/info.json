@@ -27,7 +27,9 @@
     "khaoscircuitrygroup",
     "khaosmodulesgroup",
     "khaostransportgroup",
-    "science-tab"
+    "science-tab",
+
+    "aai-signal-transmission"
   ],
   "expansion_required": true
 }

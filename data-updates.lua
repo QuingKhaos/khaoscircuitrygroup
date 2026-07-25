@@ -8,3 +8,5 @@ lib.update_subgroup("constant-combinator", "constant-combinator", "circuit-combi
 lib.update_subgroup("display-panel", "display-panel", "circuit-visual")
 lib.update_subgroup("lamp", "small-lamp", "circuit-visual-lamp")
 lib.update_subgroup("programmable-speaker", "programmable-speaker", "circuit-auditory")
+
+require("__khaoscircuitrygroup__.prototypes.compat.aai-signal-transmission-updates")

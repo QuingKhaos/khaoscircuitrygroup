@@ -13,6 +13,8 @@
     "? khaos-advanced-settings >= 1.0.0",
     "khaoslib >= 1.17.2",
 
+    "? aai-signal-transmission >= 0.5.3",
+
     "! SchallCircuitGroup"
   ],
   "package": {
