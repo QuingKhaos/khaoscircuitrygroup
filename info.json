@@ -9,6 +9,7 @@
   "dependencies": [
     "base >= 2.0.77",
 
+    "? khaos-advanced-settings >= 1.0.0",
     "khaoslib >= 1.17.1",
 
     "! SchallCircuitGroup"
