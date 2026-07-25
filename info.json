@@ -4,12 +4,16 @@
   "description": "Adds a new Circuitry group to the crafting menu. Drop-in replacement for Schall Circuit Group for 2.1, supports 2.0 too.",
   "author": "QuingKhaos",
   "homepage": "https://discord.gg/SYmkaDjFCt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0.77",
+    "(?) quality >= 2.0.77",
 
-    "khaoslib >= 1.17.1",
+    "? khaos-advanced-settings >= 1.0.0",
+    "khaoslib >= 1.17.2",
+
+    "? aai-signal-transmission >= 0.5.3",
 
     "! SchallCircuitGroup"
   ],

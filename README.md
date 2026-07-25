@@ -18,9 +18,15 @@ It supports the same subgroups as Schall Circuit Group:
 - `circuit-visual-lamp`ᵃ - Lamps
 - `circuit-auditory` - Auditory perception to players
 
-You may also like [QuingKhaos' Circuitry Tweaks](https://mods.factorio.com/mod/khaoscircuitry), which already places a lot of circuitry items into the correct subgroups.
-
 ᵃ: Will only show up if the setting "Individual combinator subgroups" is enabled.
+
+## Compatible mods
+
+For the following mods, the vehicles and equipment are sorted into the new subgroups:
+
+- [AAI Signal Transmission](https://mods.factorio.com/mod/aai-signal-transmission)
+
+If you want to see another mod made compatible, please open a discussion thread on the mod portal, or an issue on GitHub, or join the Discord server and let me know.
 
 ## For modders
 

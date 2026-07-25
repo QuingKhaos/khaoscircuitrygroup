@@ -12,6 +12,8 @@
     "! quality",
     "! space-age",
 
+    "khaos-advanced-settings",
+
     "khaosdev",
     "ghost-logistics",
     "remove-animations",
@@ -22,6 +24,8 @@
     "khaoscircuitrygroup",
     "khaosmodulesgroup",
     "khaostransportgroup",
-    "science-tab"
+    "science-tab",
+
+    "aai-signal-transmission"
   ]
 }

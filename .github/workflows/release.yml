@@ -11,9 +11,14 @@ permissions:
   contents: write
 
 jobs:
+  qa:
+    name: QA
+    uses: QuingKhaos/khaosci/.github/workflows/qa.yml@2d2ad15a401bf43d8f458d18f1f9f810ba9209dd
+
   release:
     name: Release mod
     uses: QuingKhaos/khaosci/.github/workflows/release.yml@e92ac4ea7b780401945fc37895ddaefb946693d9
+    needs: [qa]
     if: (github.event_name == 'push' && contains(github.event.head_commit.message, 'chore(release):')) || github.event_name == 'workflow_dispatch'
     with:
       lfs: false

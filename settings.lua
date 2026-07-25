@@ -8,4 +8,7 @@ khaoslib_setting:load {
   name = "khaoscircuitrygroup-individual-combinator-subgroups",
   setting_type = "startup",
   default_value = false,
+  order = "b[settings]-a[individual-combinator-subgroups]",
 } :commit()
+
+require("__khaoscircuitrygroup__.settings.compat.aai-signal-transmission")
