@@ -48,6 +48,9 @@
   "strong-style": {
     "style": "asterisk"
   },
+  "table-column-style": {
+    "style": "compact"
+  },
   "ul-style": {
     "style": "dash"
   }
